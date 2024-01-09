@@ -1,0 +1,19 @@
+body {
+  background-color: white;
+}
+.likeIcon {
+  display: inline-block;
+}
+
+.filledHeartIcon {
+  color: red; /* Set the color to your desired filled color */
+  background-color: red; /* Set the background color to match the color */
+  border-radius: 50%; /* Optional: for a circular shape */
+  padding: 5px; /* Optional: adjust padding as needed */
+  transition: all 0.3s ease-in-out; /* Add a transition for a smooth effect */
+}
+
+.clicked {
+  color: blue; /* Set the color to your desired clicked color */
+  background-color: blue; /* Set the background color to match the color */
+}

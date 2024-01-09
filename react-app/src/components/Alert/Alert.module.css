@@ -1,0 +1,22 @@
+.btn {
+  /* 8 pixels verical and 12 pixels horizontal */
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 0;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+}
+
+
+.btn-secondary {
+  background-color: burlywood;
+  color: white;
+}
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}

@@ -25,8 +25,8 @@ interface Props {
   onSelectItem: (item : string) => void;
 }
 function ListGroup({items, heading, onSelectItem}: Props) {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  // JSX markup has NO styling at all. Components are, themselves styled.
+  const [selectedIndex, setSelectedIndex] = useState(1);
+  // JSX markup has NO styling at all. Components are, themselves, styled.
   return (
     <>
       <h1>{heading}</h1>

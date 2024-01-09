@@ -1,15 +1,16 @@
-import ListGroup from "./components/ListGroup/";
+import { useState } from "react";
+import Alert from "./components/Alert/Alert.tsx";
+import Button from "./components/Button";
+import ButtonUsage from "./MaterialUIButton";
 
 function App() {
-  let items = [
-    'New York',
-    'San Francisco',
-    'Tokyo',
-    'London',
-    'Paris',
-  ]
-  const handleItem = (item : string) => {console.log(item)} 
- return <div><ListGroup items={items} heading={"Cities"} onSelectItem={handleItem}/></div>;
+  const [alertVisible, setAlertVisibility] = useState(false);
+  return (
+    <div>
+      {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
+      <Button onClick={() => setAlertVisibility(true)}>My Button</Button>
+      <ButtonUsage/>
+    </div> 
+  );
 }
-
 export default App
