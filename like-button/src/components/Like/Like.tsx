@@ -4,7 +4,7 @@ import styles from "./Like.module.css";
 interface Props {
   color?: string;
   onClick: () => void;
-  clicked: boolean;
+  clicked: boolean
 }
 
 const Like = ({ color = 'red', onClick, clicked = false }: Props) => {
