@@ -1,11 +1,26 @@
-import ExpenseTracker from './components/ExpenseTracker/ExpenseTracker.tsx'
+// App.tsx
+import React, { useState } from 'react';
+import ExpenseList from './components/ExpenseList/ExpenseList';
+import ExpenseLogger from './components/ExpenseLogger/ExpenseLogger';
 
-const App = () => {
+const App: React.FC = () => {
+  const [expenses, setExpenses] = useState<{ description: string; amount: number; category: string }[]>([]);
+
+  const handleExpenseSubmit = (data: { description: string; amount: number; category: string }) => {
+    setExpenses((prevExpenses) => [...prevExpenses, data]);
+  };
+
+  const handleClear = () => {
+    setExpenses([]); // Clear the expenses array
+  };
+
   return (
     <div>
-      <ExpenseTracker />
+      <h1>App</h1>
+      <ExpenseLogger onSubmit={handleExpenseSubmit} onClear={handleClear} />
+      <ExpenseList expenses={expenses} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
