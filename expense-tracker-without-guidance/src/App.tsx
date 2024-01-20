@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>App</h1>
+      <h1>Expense Tracker</h1>
       <ExpenseLogger onSubmit={handleExpenseSubmit} onClear={handleClear} />
       <ExpenseList expenses={expenses} />
     </div>
