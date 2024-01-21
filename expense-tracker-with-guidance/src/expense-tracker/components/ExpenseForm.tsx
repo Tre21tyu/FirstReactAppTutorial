@@ -5,13 +5,13 @@ import { useForm } from "react-hook-form";
 
 const schema = z.object({
   description: z
-    .string()
-    .min(3, { message: 'Description should be at least three characters' })
-    .max(50, { message: 'Description should be no greater than 50 characters' }),
+  .string()
+  .min(3, { message: 'Description should be at least three characters' })
+  .max(50, { message: 'Description should be no greater than 50 characters' }),
   amount: z
-    .number({ invalid_type_error: 'Amount is required.' })
-    .min(0.01)
-    .max(100_000),
+  .number({ invalid_type_error: 'Amount is required.' })
+  .min(0.01)
+  .max(100_000),
   category: z.enum(categories, {
     errorMap: () => ({ message: 'Category is required.' }),
   }),
