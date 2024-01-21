@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
+import ExpenseList from "./expense-tracker/components/ExpenseList";
+import ExpenseForm from "./expense-tracker/components/ExpenseForm";
+import categories from "./categories";
+ 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const expenses = [
+    { id: 1, description: 'apple', amount: 10, category: 'Groceries' },
+    { id: 2, description: 'orange', amount: 10, category: 'Groceries' },
+    { id: 3, description: 'tomato', amount: 10, category: 'Groceries' },
+    { id: 4, description: 'potato', amount: 10, category: 'Groceries' },
+    { id: 5, description: 'Rental Property 1', amount: 100000, category: 'Real Estate' },
+  ]
+
+  const visibleExpenses = selectedCategory
+    ? expenses.filter(e => e.category === selectedCategory)
+    : expenses;
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="mb-5">
+        <ExpenseForm/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="mb-3">
+        <ExpenseFilter onSelectCategory={(c) => setSelectedCategory(c)} />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ExpenseList expenses={visibleExpenses} onDelete={(id) => console.log("Vim is the best editor", id)} />
+    </div>
   )
 }
 
-export default App
+export default App;
