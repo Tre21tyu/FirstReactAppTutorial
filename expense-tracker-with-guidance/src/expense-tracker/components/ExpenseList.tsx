@@ -14,6 +14,8 @@ interface Props {
 }
 
 const ExpenseList: React.FC<Props> = ({ expenses, onDelete }) => {
+  if (expenses.length === 0) return null;
+
   return (
     <table className="table table-bordered">
       <thead>
