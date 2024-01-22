@@ -1,0 +1,14 @@
+/* App.css */
+
+/* Customize carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: gray; /* Set the background color to gray */
+  color: white; /* Set the text color to white */
+}
+
+/* Customize the hover state if needed */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: darkgray; /* Set the background color to a darker shade on hover */
+}
